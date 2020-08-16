@@ -16,7 +16,7 @@ Engine::~Engine()
 
 }
 
-bool Engine::Initialize(const char* windowTitle)
+bool Engine::initialize(const char* windowTitle)
 {
 	if (!glfwInit())
 	{
@@ -60,15 +60,19 @@ bool Engine::Initialize(const char* windowTitle)
 	return true;
 }
 
-void Engine::Update()
+void Engine::update()
 {
 	glfwPollEvents();
 }
 
-void Engine::Render()
+void Engine::beginRender()
 {
 	glClearColor(0, 0, 1, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+void Engine::endRender()
+{
 
 	// any drawing happens before swapbuffers otherwise, it won't be seen
 

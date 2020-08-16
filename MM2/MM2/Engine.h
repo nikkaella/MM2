@@ -19,10 +19,11 @@ public:
 	Engine();
 	~Engine();
 
-	bool Initialize(const char* windowTitle);
+	bool initialize(const char* windowTitle);
 
-	void Update();
-	void Render();
+	void update();
+	void beginRender();
+	void endRender();
 
 private:
 	// made static bc only need one window and so we can access outside of class
@@ -30,4 +31,4 @@ private:
 
 };
 
-#endif
+#endif 
